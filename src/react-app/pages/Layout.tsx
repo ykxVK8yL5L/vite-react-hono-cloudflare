@@ -15,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Settings } from '@mui/icons-material';
 import Sidebar from './Sidebar';
 
 const drawerWidth = 240
@@ -37,15 +38,13 @@ export default function Layout() {
 
     return (
         <Box sx={{ display: 'flex' }}>
-
             <CssBaseline />
-
             {/* 顶部栏 */}
             <AppBar
                 position="fixed"
                 sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
             >
-                <Toolbar>
+                <Toolbar variant="dense">
                     {isMobile && (
                         <IconButton color="inherit" onClick={() => setOpen(!open)}>
                             <MenuIcon />
@@ -65,7 +64,7 @@ export default function Layout() {
 
                     {/* 移动端标题 */}
                     <Typography
-                        variant="h5"
+                        variant="h6"
                         noWrap
                         component="a"
                         href="#app-bar-with-responsive-menu"
@@ -74,7 +73,6 @@ export default function Layout() {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
-                            fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -87,20 +85,20 @@ export default function Layout() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ color: 'white', display: 'block' }}
                             >
                                 {page}
                             </Button>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
+                        <Tooltip title="打开设置">
                             <IconButton onClick={handleOpenSettingMenu} sx={{ p: 0, color: 'white' }}>
-                                设置
+                                <Settings />
                             </IconButton>
                         </Tooltip>
                         <Menu
-                            sx={{ mt: '45px' }}
+                            sx={{ mt: '30px' }}
                             id="menu-appbar"
                             anchorOrigin={{
                                 vertical: 'top',
@@ -138,7 +136,7 @@ export default function Layout() {
                     },
                 }}
             >
-                <Toolbar />
+                <Toolbar variant="dense" />
                 <Sidebar />
             </Drawer>
 
@@ -151,7 +149,7 @@ export default function Layout() {
                     minHeight: '100vh',
                 }}
             >
-                <Toolbar />
+                <Toolbar variant="dense" />
                 <NotificationContainer />
                 <Outlet />
             </Box>

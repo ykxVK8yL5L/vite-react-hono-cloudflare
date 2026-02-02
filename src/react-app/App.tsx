@@ -11,7 +11,7 @@ import { eventBus, useEvent } from "./utils/bus";
 import Test from "./pages/test";
 import { Alert } from "@mui/material"
 import { useAuthStore } from "./stores/auth";
-
+import { Box } from '@mui/material'
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -31,9 +31,8 @@ function App() {
 	}
 
 	return (
-		<>
-
-			<Alert severity="success">
+		<Box sx={{ width: '100%', px: 3 }}>
+			<Alert severity="success" sx={{ width: '100%' }}>
 				Here is a gentle confirmation that your action was successful.
 			</Alert>
 			<div className="flex">
@@ -107,7 +106,7 @@ function App() {
 				</p>
 			</div>
 			<p className="read-the-docs">Click on the logos to learn more</p>
-		</>
+		</Box>
 	);
 }
 
