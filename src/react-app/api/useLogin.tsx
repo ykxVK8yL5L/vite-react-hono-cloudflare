@@ -12,7 +12,7 @@ interface LoginPayload {
 export function useLogin() {
     return useMutation({
         mutationFn: (data: LoginPayload) =>
-            fetcher<LoginResponse>('/api/login', {
+            fetcher<LoginResponse>('/login', {
                 method: 'POST',
                 auth: false,
                 body: JSON.stringify(data),

@@ -6,5 +6,6 @@ export function useCurrentUser() {
     return useQuery<User>({
         queryKey: ['current-user'],
         queryFn: () => fetcher('/api/user'),
+        retry: 0,
     })
 }

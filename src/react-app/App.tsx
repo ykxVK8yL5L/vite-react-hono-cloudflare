@@ -71,7 +71,7 @@ function App() {
 			<div className="card">
 				<button
 					onClick={() => {
-						fetch("/api/users")
+						fetch("/test")
 							.then((res) => res.json() as Promise<{ name: string }>)
 							.then((data) => setName(data.name));
 					}}
