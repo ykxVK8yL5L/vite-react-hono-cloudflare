@@ -9,7 +9,10 @@ apiRouter.use(authMiddleware)
 apiRouter.use(directusMiddleware)
 apiRouter.route('/', otpRouter)
 
-apiRouter.get("/user", (c) => c.json({ name: "Cloudflare" }));
+apiRouter.get("/user", (c) => {
+  console.log('logger test');
+  return c.json({ name: "Cloudflare" });
+});
 apiRouter.get("/users", authMiddleware, directusMiddleware, async (c) => {
   const directus = c.get('directus');
 
