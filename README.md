@@ -2,7 +2,7 @@
 ## 经测试必备依赖cloudflare/vite-plugin内的依赖重写了node-fetch导致turso客户端无法正常连接.如有需要建议前后端分开开发.
 
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ykxVK8yL5L/vite-react-hono-cloudflare)
 
 This template provides a minimal setup for building a React application with TypeScript and Vite, designed to run on Cloudflare Workers. It features hot module replacement, ESLint integration, and the flexibility of Workers deployments.
 
